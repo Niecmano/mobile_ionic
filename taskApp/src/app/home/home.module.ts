@@ -12,7 +12,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forChild(routes),
-    HomePage  // ✅ standalone komponenta se IMPORTUJE
+    HomePage 
   ],
 })
 export class HomePageModule {}

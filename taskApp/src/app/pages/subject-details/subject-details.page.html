@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Obaveze</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-label>Vrsta obaveze</ion-label>
+    <ion-select [(ngModel)]="newType">
+      <ion-select-option value="Prvi kolokvijum">Prvi kolokvijum</ion-select-option>
+      <ion-select-option value="Drugi kolokvijum">Drugi kolokvijum</ion-select-option>
+      <ion-select-option value="Lab test">Lab test</ion-select-option>
+      <ion-select-option value="Domaci">Domaci</ion-select-option>
+      <ion-select-option value="Ispit">Ispit</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Datum i vreme (opciono)</ion-label>
+    <ion-input [(ngModel)]="newDateTime" placeholder="npr. 27.2.2026. 18:00"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="addObligation()">
+    Dodaj obavezu
+  </ion-button>
+  
+  <ion-card *ngIf="editingId">
+    <ion-card-header>
+      <ion-card-title>Izmena obaveze</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-item>
+        <ion-label>Vrsta</ion-label>
+        <ion-select [(ngModel)]="editType">
+          <ion-select-option value="Prvi kolokvijum">Prvi kolokvijum</ion-select-option>
+          <ion-select-option value="Drugi kolokvijum">Drugi kolokvijum</ion-select-option>
+          <ion-select-option value="Lab test">Lab test</ion-select-option>
+          <ion-select-option value="Domaci">Domaci</ion-select-option>
+          <ion-select-option value="Ispit">Ispit</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Datum i vreme</ion-label>
+        <ion-input [(ngModel)]="editDateTime"></ion-input>
+      </ion-item>
+
+      <ion-button expand="full" (click)="saveEdit()">Sačuvaj</ion-button>
+      <ion-button expand="full" fill="outline" (click)="cancelEdit()">Otkaži</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-list>
+    <ion-item *ngFor="let ob of obligations">
+      <ion-label>
+        <h2>{{ ob.type }}</h2>
+        <p>{{ ob.dateTime }}</p>
+      </ion-label>
+
+      <ion-button fill="clear" color="danger" slot="end" (click)="deleteObligation(ob.id)">
+        Delete
+      </ion-button>
+
+      <ion-button fill="clear" slot="end" (click)="startEdit(ob)">
+        Edit
+      </ion-button>
+
+    </ion-item>
+  </ion-list>
+
+</ion-content>

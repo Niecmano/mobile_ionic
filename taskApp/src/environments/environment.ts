@@ -11,7 +11,7 @@ export const environment = {
     storageBucket: "mobr-proj.firebasestorage.app",
     messagingSenderId: "251720003200",
     appId: "1:251720003200:web:5af710f3460c58369e8065",
-    databaseURL: "https://mobr-proj-default-rtdb.europe-west1.firebasedatabase.app/"
+    databaseURL: "https://mobr-proj-default-rtdb.europe-west1.firebasedatabase.app"
   }
 };
 
