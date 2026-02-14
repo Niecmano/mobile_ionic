@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registracija</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-label position="stacked">Email</ion-label>
+    <ion-input [(ngModel)]="email" type="email"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Password</ion-label>
+    <ion-input [(ngModel)]="password" type="password"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Ponovi password</ion-label>
+    <ion-input [(ngModel)]="confirm" type="password"></ion-input>
+  </ion-item>
+
+  <ion-button expand="full" (click)="onRegister()">Napravi nalog</ion-button>
+
+  <ion-button expand="full" fill="outline" routerLink="/login">
+    Imam nalog → Login
+  </ion-button>
+
+  <ion-text color="danger" *ngIf="errorMsg">
+    <p>{{ errorMsg }}</p>
+  </ion-text>
+
+</ion-content>

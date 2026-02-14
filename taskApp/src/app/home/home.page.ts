@@ -5,9 +5,11 @@ import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 
-
 import { SubjectService } from '../services/subject.service';
 import { Subject } from '../models/subject';
+import { AuthService } from '../services/auth.service';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-home',
@@ -22,9 +24,15 @@ export class HomePage implements OnInit {
 
   constructor(
     private subjectService: SubjectService,
-    private alertCtrl: AlertController
+    private alertCtrl: AlertController,
+    private auth: AuthService,
+    private router: Router
   ) { }
 
+  logout() {
+    this.auth.logout();
+    this.router.navigateByUrl('/login');
+  }
 
   ngOnInit() {
     this.loadSubjects();

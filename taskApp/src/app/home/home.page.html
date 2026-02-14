@@ -1,6 +1,9 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>Predmeti</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="danger" (click)="logout()">Logout</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -10,19 +13,14 @@
     Dodaj predmet
   </ion-button>
 
-<ion-item *ngFor="let s of subjects" [routerLink]="['/subject', s.id]">
-  <ion-label>
-    <h2>{{ s.name }}</h2>
-  </ion-label>
+  <ion-item *ngFor="let s of subjects" [routerLink]="['/subject', s.id]">
+    <ion-label>
+      <h2>{{ s.name }}</h2>
+    </ion-label>
 
-  <ion-button
-    fill="clear"
-    color="danger"
-    slot="end"
-    (click)="onDeleteClick($event, s.id)">
-    Delete
-  </ion-button>
-</ion-item>
-
+    <ion-button fill="clear" color="danger" slot="end" (click)="onDeleteClick($event, s.id)">
+      Delete
+    </ion-button>
+  </ion-item>
 
 </ion-content>
