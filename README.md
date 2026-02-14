@@ -6,22 +6,22 @@ Aplikacija sadrži i registraciju i prijavu korisnika.
 
 ## Tehnologije
 
-# Frontend
+### Frontend
 
-Ionic Framework – UI komponente i mobilni izgled aplikacije
-Angular – struktura aplikacije, komponente, routing i servisi
-TypeScript – tipizirani JavaScript za sigurniji razvoj
-HTML + SCSS – izgled i stilizacija stranica
+##### Ionic Framework – UI komponente i mobilni izgled aplikacije
+##### Angular – struktura aplikacije, komponente, routing i servisi
+##### TypeScript – tipizirani JavaScript za sigurniji razvoj
+##### HTML + SCSS – izgled i stilizacija stranica
 
-# Backend (BaaS)
+### Backend (BaaS)
 
-Firebase Authentication (REST API)
-Firebase Realtime Database (REST API)
+##### Firebase Authentication (REST API)
+##### Firebase Realtime Database (REST API)
 
 
-# Angular funkcionalnosti
+## Angular funkcionalnosti
 
-Angular Router – navigacija između stranica
-AuthGuard – zaštita ruta za neulogovane korisnike
-HttpClient – komunikacija sa Firebase REST API-jem
-RxJS Observables – rad sa asinhronim podacima
+##### Angular Router – navigacija između stranica
+##### AuthGuard – zaštita ruta za neulogovane korisnike
+##### HttpClient – komunikacija sa Firebase REST API-jem
+##### RxJS Observables – rad sa asinhronim podacima
